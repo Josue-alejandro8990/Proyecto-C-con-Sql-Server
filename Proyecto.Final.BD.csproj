@@ -1,0 +1,254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A5A8E968-03DC-47AC-9B48-DFA85C58AFA9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Proyecto.Final.BD</RootNamespace>
+    <AssemblyName>Proyecto.Final.BD</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EASendMail">
+      <HintPath>..\packages\EASendMail.7.7.0.3\lib\net20\EASendMail.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CLASES\ClsConsultas.cs" />
+    <Compile Include="CLASES\clsmodeloticket.cs" />
+    <Compile Include="CLASES\ConexionSqlserver.cs" />
+    <Compile Include="CLASES\MDempleado.cs" />
+    <Compile Include="CLASES\clsconfigurarcorreo.cs" />
+    <Compile Include="CLASES\clscreardocumento.cs" />
+    <Compile Include="CLASES\clseditardocumento.cs" />
+    <Compile Include="CLASES\clsmodeloempleado.cs" />
+    <Compile Include="CLASES\Generador.cs" />
+    <Compile Include="CONEXION\CONEXION_MAESTRA.cs" />
+    <Compile Include="CONEXION\EDITOR_CONEXION.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CONEXION\EDITOR_CONEXION.Designer.cs">
+      <DependentUpon>EDITOR_CONEXION.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CONEXION\LIBRERIAS\Desencryptar.cs" />
+    <Compile Include="CONEXION\LIBRERIAS\Encryptar.cs" />
+    <Compile Include="FORMULARIOS\Administrador\Detalles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\Administrador\Detalles.Designer.cs">
+      <DependentUpon>Detalles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\Administrador\Equipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\Administrador\Equipo.Designer.cs">
+      <DependentUpon>Equipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\Administrador\NuevoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\Administrador\NuevoUsuario.Designer.cs">
+      <DependentUpon>NuevoUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\Administrador\Tickets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\Administrador\Tickets.Designer.cs">
+      <DependentUpon>Tickets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\Encuesta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\Encuesta.Designer.cs">
+      <DependentUpon>Encuesta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\Grafica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\Grafica.Designer.cs">
+      <DependentUpon>Grafica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\Envio_de_correo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\Envio_de_correo.Designer.cs">
+      <DependentUpon>Envio_de_correo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\Tecnicos\Estado_de_gestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\Tecnicos\Estado_de_gestion.Designer.cs">
+      <DependentUpon>Estado_de_gestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\Tecnicos\Gestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\Tecnicos\Gestion.Designer.cs">
+      <DependentUpon>Gestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\Tecnicos\LiberarTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\Tecnicos\LiberarTicket.Designer.cs">
+      <DependentUpon>LiberarTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\Usuario\Reportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\Usuario\Reportes.Designer.cs">
+      <DependentUpon>Reportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\Usuario\VerReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\Usuario\VerReportes.Designer.cs">
+      <DependentUpon>VerReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LOGIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LOGIN.Designer.cs">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\Administrador\Administrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\Administrador\Administrador.Designer.cs">
+      <DependentUpon>Administrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\Usuario\EmpleadoComun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\Usuario\EmpleadoComun.Designer.cs">
+      <DependentUpon>EmpleadoComun.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FORMULARIOS\Tecnicos\Tecnico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FORMULARIOS\Tecnicos\Tecnico.Designer.cs">
+      <DependentUpon>Tecnico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CONEXION\EDITOR_CONEXION.resx">
+      <DependentUpon>EDITOR_CONEXION.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\Administrador\Administrador.resx">
+      <DependentUpon>Administrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\Administrador\Detalles.resx">
+      <DependentUpon>Detalles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\Administrador\Equipo.resx">
+      <DependentUpon>Equipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\Administrador\NuevoUsuario.resx">
+      <DependentUpon>NuevoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\Administrador\Tickets.resx">
+      <DependentUpon>Tickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\Encuesta.resx">
+      <DependentUpon>Encuesta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\Grafica.resx">
+      <DependentUpon>Grafica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\Envio_de_correo.resx">
+      <DependentUpon>Envio_de_correo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\Tecnicos\Estado_de_gestion.resx">
+      <DependentUpon>Estado_de_gestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\Tecnicos\Gestion.resx">
+      <DependentUpon>Gestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\Tecnicos\LiberarTicket.resx">
+      <DependentUpon>LiberarTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\Tecnicos\Tecnico.resx">
+      <DependentUpon>Tecnico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\Usuario\EmpleadoComun.resx">
+      <DependentUpon>EmpleadoComun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\Usuario\Reportes.resx">
+      <DependentUpon>Reportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FORMULARIOS\Usuario\VerReportes.resx">
+      <DependentUpon>VerReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LOGIN.resx">
+      <DependentUpon>LOGIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="transparent-exit-icon-essential-set-icon-5d672eec7d4135.0481692315670433085131.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
